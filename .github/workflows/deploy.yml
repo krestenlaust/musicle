@@ -1,0 +1,67 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - feat/cd-website
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+
+      - name: Install npm dependencies
+        run: npm install
+
+      - name: Setup JDK (for Scala.js)
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '11'  # Adjust according to your version
+
+      - name: Setup Scala (sbt)
+        uses: olafurpg/setup-scala@v10
+        with:
+          scala-version: '3.5.2'  # Adjust to match your build.sbt
+          sbt-version: '1.5.5'    # Adjust according to your project
+
+      - name: Install Scala.js dependencies
+        run: sbt update
+
+      - name: Build Scala.js project
+        run: sbt fastOptJS   # Use `fullOptJS` for production build
+
+      - name: Build with Vite
+        run: npm run build  # This triggers Vite to bundle everything
+
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v3
+        with:
+          name: production-files
+          path: ./dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: production-files
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
