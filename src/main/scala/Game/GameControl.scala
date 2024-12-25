@@ -9,7 +9,8 @@ import _root_.Game.GameControl.guessesToGuessSlots
 class GameControl(val game: Var[Game], youtubeEmbed: YoutubeEmbed):
   def component(): Seq[HtmlElement] =
     Seq(
-      h1("AUROLE: V1.0"),
+      youtubeEmbed.component(),
+      // h1(text <-- game.signal.map(currentGame => currentGame.date)),
       div(
         child <-- game.signal.map(currentGame =>
           ul(
@@ -25,6 +26,13 @@ class GameControl(val game: Var[Game], youtubeEmbed: YoutubeEmbed):
       playButton(),
       SearchFieldControl.component(game.now().songs, game.now().isGuessed, songListElement),
     )
+
+  def reload(): Unit =
+    val currentGame: Game = game.now()
+
+    // Always hide embed, otherwise it will flash the answer.
+    youtubeEmbed.videoHidden.set(true)
+    currentGame.loadStage()
 
   private def guessSong(song: Option[Song]): Unit =
     val currentGame = game.now()
