@@ -35,6 +35,8 @@ lazy val root = project
       // JSON codec
       "io.bullet" %%% "borer-core"       % "1.15.0",
       "io.bullet" %%% "borer-derivation" % "1.15.0",
+      // Development
+      "org.scalatest"    %% "scalatest" % "3.2.18" % "test",
     ),
 
     // Tell ScalablyTyped that we manage `npm install` ourselves

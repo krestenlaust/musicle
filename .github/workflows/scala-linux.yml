@@ -35,5 +35,5 @@ jobs:
       run: sbt fastOptJS   # Use `fullOptJS` for production build
 
     # Disabled until tests are added
-    #- name: Run tests
-    #  run: sbt test
+    - name: Run tests
+      run: sbt test
