@@ -4,7 +4,7 @@ import com.raquo.laminar.api.L.{ *, given }
 import musicle.utils.SearchUtil
 import org.scalajs.dom
 
-object SearchFieldControl:
+class SearchFieldControl:
   def component[A](
       database: Seq[A],
       exclusionFilter: A => Boolean,

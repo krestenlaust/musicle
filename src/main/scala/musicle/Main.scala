@@ -2,6 +2,7 @@ package musicle
 
 import com.raquo.laminar.api.L.{ *, given }
 import musicle.audio.{ AudioController, YoutubeEmbed }
+import musicle.controls.SearchFieldControl
 import musicle.game.{ Game, GameControl, GameType, SongLibrary, SongPicker }
 import org.scalajs.dom
 
@@ -14,13 +15,14 @@ import scala.collection.mutable
   setGameDate(LocalDate.now())
 
 // Game-dependencies
-val websiteState: Var[WebsiteState] = Persistence.getWebsiteState
-val youtubeEmbed: YoutubeEmbed      = YoutubeEmbed()
-val songLibrary: SongLibrary        = SongLibrary(SongLibrary.loadSongs())
+val websiteState: Var[WebsiteState]        = Persistence.getWebsiteState
+val youtubeEmbed: YoutubeEmbed             = YoutubeEmbed()
+val searchFieldControl: SearchFieldControl = SearchFieldControl()
+val songLibrary: SongLibrary               = SongLibrary(SongLibrary.loadSongs())
 
 // Game
 val currentGame: Var[Game]   = Var(loadGameByDate(LocalDate.now()))
-val gameControl: GameControl = GameControl(currentGame, youtubeEmbed)
+val gameControl: GameControl = GameControl(currentGame, youtubeEmbed, searchFieldControl)
 
 // Other
 val currentDate: Var[LocalDate] = Var(LocalDate.now())

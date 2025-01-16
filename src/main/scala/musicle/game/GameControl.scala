@@ -6,7 +6,7 @@ import GameControl.guessesToGuessSlots
 import musicle.audio.YoutubeEmbed
 import musicle.controls.SearchFieldControl
 
-class GameControl(val game: Var[Game], youtubeEmbed: YoutubeEmbed):
+class GameControl(val game: Var[Game], youtubeEmbed: YoutubeEmbed, searchField: SearchFieldControl):
   def component(): Seq[HtmlElement] =
     Seq(
       youtubeEmbed.component(),
@@ -19,7 +19,7 @@ class GameControl(val game: Var[Game], youtubeEmbed: YoutubeEmbed):
           ),
         ),
       ),
-      SearchFieldControl.component(
+      searchField.component(
         game.now().gameType.songs,
         game.now().isGuessed,
         songListElement,
