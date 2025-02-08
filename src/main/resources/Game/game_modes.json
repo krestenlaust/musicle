@@ -1,0 +1,39 @@
+{
+    "game_modes": {
+        "guess_the_song": {
+            "name": "Guess the song!",
+            "valid_categories": [
+                "music"
+            ],
+            "search": {
+                "attribute": "title",
+                "input_type": "title_guess"
+            },
+            "known": {
+                "music_uri": "music_player",
+                "album": "correct_wrong_string"
+            },
+            "clues": {
+                "album": "correct_wrong_string",
+                "release_year": "above_below_date"
+            }
+        },
+        "guess_the_game": {
+            "name": "Guess the game!",
+            "valid_categories": [
+                "video_game"
+            ],
+            "search": {
+                "attribute": "title",
+                "input_type": "title_guess"
+            },
+            "known": {
+                "screenshot": "display",
+                "release_year": "above_below_date"
+            },
+            "clues": {
+                "developer": "correct_wrong_string"
+            }
+        }
+    }
+}

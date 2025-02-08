@@ -1,0 +1,34 @@
+{
+    "entities": {
+        "song_001": {
+            "category": "music",
+            "title": "Runaway",
+            "artist": "Aurora",
+            "music_uri": "https://youtube.com/...",
+            "lyrics_sample": "I was listening to the ocean...",
+            "release_year": 2015,
+            "album": "All My Demons Greeting Me as a Friend"
+        },
+        "song_002": {
+            "category": "music",
+            "title": "Runaway (Remix)",
+            "artist": "Aurora",
+            "music_uri": "https://youtube.com/...",
+            "lyrics_sample": "I was listening to the ocean...",
+            "release_year": 2021,
+            "album": "Runaway Remixes"
+        },
+        "game_001": {
+            "category": "video_game",
+            "title": "The Legend of Zelda: Breath of the Wild",
+            "developer": "Nintendo",
+            "release_year": 2017,
+            "platforms": [
+                "Switch",
+                "Wii U"
+            ],
+            "screenshot": "https://example.com/botw.jpg",
+            "music_uri": "https://youtube.com/zelda_theme"
+        }
+    }
+}

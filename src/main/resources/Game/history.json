@@ -1,0 +1,27 @@
+{
+    "history": [
+        {
+            "date": "2024-01-01",
+            "game_mode_sets": {
+                "guess_the_song": [
+                    "song_001"
+                ],
+                "guess_the_game": [
+                    "game_001"
+                ]
+            }
+        },
+        {
+            "date": "2024-02-10",
+            "game_mode_sets": {
+                "guess_the_song": [
+                    "song_001",
+                    "song_002"
+                ],
+                "guess_the_game": [
+                    "game_001"
+                ]
+            }
+        }
+    ]
+}
