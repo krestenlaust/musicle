@@ -1,0 +1,19 @@
+{
+    "filters": {
+        "aurora_no_remixes": {
+            "type": "music",
+            "include": [
+                {"artist": "Aurora"}
+            ],
+            "exclude": [
+                {"music_type": "remix"}
+            ]
+        },
+        "nintendo_all_games": {
+            "type": "video_game",
+            "include": [
+                {"developer": "Nintendo"}
+            ]
+        }
+    }
+}

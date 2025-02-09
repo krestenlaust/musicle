@@ -1,0 +1,38 @@
+{
+  "inputs": {
+    "title_guess": {
+      "type": "text",
+      "matching": "fuzzy"
+    },
+    "developer_guess": {
+      "type": "text",
+      "matching": "exact"
+    }
+  },
+  "outputs": {
+    "music_player": {
+      "type": "media",
+      "display": "playable"
+    },
+    "exact_number": {
+      "type": "integer",
+      "display": "full"
+    },
+    "above_below_number": {
+      "type": "integer",
+      "display": "above_below"
+    },
+    "exact_date": {
+      "type": "date",
+      "display": "full"
+    },
+    "above_below_date": {
+      "type": "date",
+      "display": "above_below"
+    },
+    "correct_wrong_string": {
+      "type": "string",
+      "display": "correct_wrong"
+    }
+  }
+}
