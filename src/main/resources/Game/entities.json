@@ -1,7 +1,7 @@
 {
     "entities": {
         "song_001": {
-            "type": "music",
+            "kind": "music",
             "attributes": {
                 "title": "Runaway",
                 "artist": "Aurora",
@@ -12,7 +12,7 @@
             }
         },
         "song_002": {
-            "type": "music",
+            "kind": "music",
             "attributes": {
                 "title": "Runaway (Remix)",
                 "artist": "Aurora",
@@ -24,7 +24,7 @@
             }
         },
         "game_001": {
-            "type": "video_game",
+            "kind": "video_game",
             "attributes": {
                 "title": "The Legend of Zelda: Breath of the Wild",
                 "developer": "Nintendo",

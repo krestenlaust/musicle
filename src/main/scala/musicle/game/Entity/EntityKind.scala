@@ -1,4 +1,4 @@
 package musicle.game
 
-case class EntityCategory(name: String):
+case class EntityKind(name: String):
   override def toString: String = name

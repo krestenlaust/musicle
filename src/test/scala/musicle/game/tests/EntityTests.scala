@@ -8,23 +8,23 @@ import io.bullet.borer.syntax._
 class EntityTests extends AnyFlatSpec {
   "Entity attributes" should "be accessible" in {
     val entity = Entity(
-        EntityId("song_001"),
-        EntityCategory("music"),
-        "title" -> TitleAttribute("Runaway"),
-        "artist" -> ArtistAttribute("Aurora"),
-        "album" -> AlbumAttribute("All My Demons Greeting Me as a Friend"),
-        "music_uri" -> YoutubeAttribute("BRpS93I8_Jk"),
-        )
+      EntityId("song_001"),
+      EntityKind("music"),
+      "title"     -> TitleAttribute("Runaway"),
+      "artist"    -> ArtistAttribute("Aurora"),
+      "album"     -> AlbumAttribute("All My Demons Greeting Me as a Friend"),
+      "music_uri" -> YoutubeAttribute("BRpS93I8_Jk"),
+    )
 
     val actualTitleAttribute = entity.getAttribute[TitleAttribute]("title")
-    
+
     assert(actualTitleAttribute.isDefined === true)
     assert(actualTitleAttribute.get === TitleAttribute("Runaway"))
   }
 
   "Entity attributes" should "be parsed from JSON" in {
     val jsonString =
-        """
+      """
             {
             "category": "music",
             "title": "Runaway",
