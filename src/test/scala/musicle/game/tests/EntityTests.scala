@@ -25,15 +25,17 @@ class EntityTests extends AnyFlatSpec {
   "Entity attributes" should "be parsed from JSON" in {
     val jsonString =
       """
-            {
-            "category": "music",
-            "title": "Runaway",
-            "artist": "Aurora",
-            "music_uri": "https://youtube.com/...",
-            "lyrics_sample": "I was listening to the ocean...",
-            "release_year": 2015,
-            "album": "All My Demons Greeting Me as a Friend"
+          {
+            "kind": "music",
+            "attributes": {
+              "title": "Runaway",
+              "artist": "Aurora",
+              "music_uri": "https://youtube.com/...",
+              "lyrics_sample": "I was listening to the ocean...",
+              "release_year": 2015,
+              "album": "All My Demons Greeting Me as a Friend"
             }
+          }
         """
     val decoder = Json.parse(jsonString).to[Entity]
 
