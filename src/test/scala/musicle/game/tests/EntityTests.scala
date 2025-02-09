@@ -8,7 +8,7 @@ import io.bullet.borer.syntax._
 class EntityTests extends AnyFlatSpec {
   "Entity attributes" should "be accessible" in {
     val entity = Entity(
-      EntityId("song_001"),
+      ObjectId("song_001"),
       EntityKind("music"),
       "title"     -> TitleAttribute("Runaway"),
       "artist"    -> ArtistAttribute("Aurora"),
